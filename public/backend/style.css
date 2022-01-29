@@ -1,0 +1,25 @@
+.alert_tb{
+	color: red !important;
+    	background: none !important;
+    	border: none !important;
+    	padding: 2% 0 !important;
+    	font-style: italic;
+}
+
+#hangtt{
+	background: #343a40;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.hanglitt{
+	border-bottom: 1px solid white;
+	color: white;
+	text-align: center;
+}
+
+#khung{
+	margin:auto;
+	display: none;
+}
