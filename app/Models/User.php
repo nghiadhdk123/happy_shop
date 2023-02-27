@@ -99,7 +99,7 @@ class User extends Authenticatable
 
     public function votePosts()
     {
-        return $this->belongsToMany(Post::class,'likes')->withPivot(['status','type_like']);
+        return $this->belongsToMany(Post::class,'likes');
     }
 
     public function haveVouchers()

@@ -32,7 +32,7 @@
 			<h3 class="title_post"><a href="{{ route('post.show',$post->slug) }}">{{ $post->title }}</a></h3>
 			<a class="link_like">
 				<i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="number_like">{{ count($post->voteUsers) }}</span>
-				<i class="fa fa-eye view-two" aria-hidden="true"></i><span class="number_like">{{ $post->view }}</span>
+				<i class="fa fa-eye view-two" aria-hidden="true"></i><span class="number_view">{{ $post->view }}</span>
 			</a>
 
 			<div class="live_like">
@@ -100,7 +100,7 @@
 	border-radius: 10px;
 }
 
-.number_like {
+.number_like, .number_view {
 	display: inline-block;
 	margin-left: 5px;
 }
@@ -191,7 +191,13 @@
 							_token:_token,
 						},
 						success: function (data) {
-							location.reload()
+							if(data.status == 1) {
+								$('.icons').eq(index).toggleClass('complete_like');
+								$('.number_like').eq(index).text(data.count_like);
+							}else{
+								$('.icons').eq(index).toggleClass('complete_like');
+								$('.number_like').eq(index).text(data.count_like);
+							}
 						}
 					});
 				});

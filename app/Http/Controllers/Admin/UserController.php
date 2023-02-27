@@ -65,7 +65,7 @@ class UserController extends Controller
     public function create()
     {
         // if(Gate::allows('role-user',User::class))
-        if(auth()->user()->hasAnyPermission(['create user']))
+        if(auth()->user()->hasAnyPermission(['add user']))
         {
             return view('admin.user.create');
         }else{

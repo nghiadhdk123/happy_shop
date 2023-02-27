@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnRoleTableUser extends Migration
+class AddColumnDate extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddColumnRoleTableUser extends Migration
      */
     public function up()
     {
+        Schema::table('userinfor', function (Blueprint $table) {
+            $table->dateTime('date')->nullable();
+        });
+
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role')->after('gender')->nullable();
+            $table->dateTime('time_login')->nullable();
+            $table->integer('active')->nullable();
         });
     }
 
@@ -25,8 +30,11 @@ class AddColumnRoleTableUser extends Migration
      */
     public function down()
     {
+        Schema::table('userinfor', function (Blueprint $table) {
+            $table->dropColumn('date');
+        });
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
+            $table->dropColumn(['time_login','active']);
         });
     }
 }

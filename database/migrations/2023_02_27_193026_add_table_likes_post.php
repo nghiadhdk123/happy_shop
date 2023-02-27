@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTableUserVoucher extends Migration
+class AddTableLikesPost extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class AddTableUserVoucher extends Migration
      */
     public function up()
     {
-        Schema::create('user_voucher', function (Blueprint $table) {
-            $table->integer('voucher_id')->nullable();
-            $table->integer('user_id')->nullable();
-            $table->integer('status')->default(1);
-            $table->timestamps();
+        Schema::create('likes', function (Blueprint $table) {
+            $table->integer('post_id');
+            $table->integer('user_id');
         });
     }
 
@@ -28,6 +26,8 @@ class AddTableUserVoucher extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_voucher');
+        Schema::table('likes', function (Blueprint $table) {
+            $table->dropColumn(['post_id','user_id']);
+        });
     }
 }

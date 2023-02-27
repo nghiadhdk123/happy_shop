@@ -15,12 +15,12 @@ class CreateVouchersTable extends Migration
     {
         Schema::create('vouchers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->comment('Tên voucher');
-            $table->string('code')->comment('Mã voucher');
+            $table->string('name')->comment('Tên voucher')->nullable();
+            $table->string('code')->comment('Mã voucher')->nullable();
             $table->string('money')->comment('Giảm theo tiền')->nullable();
             $table->string('percent')->comment('Giảm theo phần trăm')->nullable();
-            $table->integer('status')->default(1);
-            $table->string('expiry')->comment('Hạn sử dụng');
+            $table->integer('status')->default(1)->nullable();
+            $table->string('expiry')->comment('Hạn sử dụng')->nullable();
             $table->timestamps();
         });
     }

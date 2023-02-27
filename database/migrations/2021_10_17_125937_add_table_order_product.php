@@ -14,11 +14,11 @@ class AddTableOrderProduct extends Migration
     public function up()
     {
         Schema::create('order_product', function (Blueprint $table) {
-            $table->integer('product_id');
-            $table->integer('order_id');
-            $table->string('name');
-            $table->integer('quantity');
-            $table->integer('price');
+            $table->integer('product_id')->nullable();
+            $table->integer('order_id')->nullable();
+            $table->string('name')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('price')->nullable();
             $table->timestamps();
         });
     }

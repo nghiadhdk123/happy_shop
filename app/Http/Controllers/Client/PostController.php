@@ -67,6 +67,7 @@ class PostController extends Controller
             $path = Storage::disk('public')    //->Lưu vào trong thư mục public
                     ->putFileAs('avtar-post-client', $file, $name); 
 
+            $post->path = 'public';
             $post->image = $path;
         }
 
@@ -94,11 +95,10 @@ class PostController extends Controller
         {
             $user->votePosts()->detach($post->id);
         }else{
-           $user->votePosts()->attach($post->id,[
-                'type_like' => 0,
-                'created_at' => Carbon::now(),
-            ]);
+           $user->votePosts()->attach($post->id);
         }
+
+        return response()->json(['status' => 1, 'count_like' => $post->voteUsers()->count(), 'code' => 200], 200);
     }
 
     public function postTag($id)

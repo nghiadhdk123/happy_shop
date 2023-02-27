@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Spatie\Permission\Models\Permission;
+use App\Models\User;
 
 class UserSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // DB::table('permissions')->truncate();
         DB::table('users')->truncate();
             DB::table('users')->insert([
                 'name'=>'Trần Đình Nghĩa',
@@ -38,111 +40,111 @@ class UserSeeder extends Seeder
             DB::table('products')->truncate();
             DB::table('categories')->truncate();
             // DB::table('roles')->truncate();
-            // DB::table('permissions')->truncate();
+            
 
             $permissions = [
                 [
                     'name' => 'add product',
                     'description' => 'Bạn có quyền tạo mới sản phẩm',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'edit product',
                     'description' => 'Bạn có quyền chỉnh sửa sản phẩm của bạn',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'delete product',
                     'description' => 'Bạn có quyền xóa sản phẩm của bạn',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'add category',
                     'description' => 'Bạn có quyền tạo mới danh mục',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'edit category',
                     'description' => 'Bạn có quyền chỉnh sửa danh mục của bạn',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'delete category',
                     'description' => 'Bạn có quyền xóa danh mục của bạn',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'add user',
                     'description' => 'Bạn có quyền tạo mới người dùng',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'edit user',
                     'description' => 'Bạn có quyền chỉnh sửa người dùng',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'delete user',
                     'description' => 'Bạn có quyền xóa người dùng',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'lock user',
                     'description' => 'Bạn có quyền khóa tài khoản của người dùng',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'respone user',
                     'description' => 'Bạn có quyền khôi phục người dùng',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'seen statistical',
                     'description' => 'Bạn có quyền xem thống kê của Pages',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'add post',
                     'description' => 'Bạn có quyền tạo mới bài viết',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'edit post',
                     'description' => 'Bạn có quyền chỉnh sửa bài viết',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],
                 [
                     'name' => 'delte post',
                     'description' => 'Bạn có quyền xóa bài viết',
-                    'gaurd_name' => 'web',
+                    'guard_name' => 'web',
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ],

@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->tinyInteger('gender')->unsigned()->nullable();
             $table->tinyInteger('is_active')->default(1);
-            $table->tinyInteger('user_updated');
-            $table->string('path');
-            $table->string('avatar');
+            $table->tinyInteger('user_updated')->nullable();
+            $table->string('path')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -18,7 +18,7 @@
 						<div class="panel-body">
 							<ul>
 								@foreach ($category->children as $parent)
-									<li><a href="{{ $parent->id }}">{{ $parent->name }}</a></li>
+									<li><a href="{{ route('product-by-category',$parent->slug) }}">{{ $parent->name }}</a></li>
 								@endforeach
 							</ul>
 						</div>

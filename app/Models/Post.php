@@ -23,7 +23,7 @@ class Post extends Model
 
     public function voteUsers()
     {
-        return $this->belongsToMany(User::class,'likes')->withPivot(['status','type_like']);
+        return $this->belongsToMany(User::class,'likes');
     }
 
     public function tags()

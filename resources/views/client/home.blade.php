@@ -124,53 +124,55 @@
 
 		<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
+				@if($products_random->count() > 0)
 				<div class="item active">
-				@for ($i = 0 ; $i < 3 ; $i++)
-					<div class="col-sm-4">
-						<div class="product-image-wrapper">
-							<div class="single-products">
-								<div class="productinfo text-center case2">
-									<img src="{{ $products_random[$i]->images[0]->image_url }}"
-										alt="" class="img_lq2" />
-									<h2>{{ $products_random[$i]->sale_price }} VNĐ</h2>
-									<p>
-										{{ $products_random[$i]->name }}
-									</p>
-									<a href="#"
-										class="btn btn-default add-to-cart"><i
-											class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-								</div>
+					{{-- @for ($i = 0 ; $i < 3 ; $i++)
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center case2">
+										<img src="{{ $products_random[$i]->images[0]->image_url }}"
+											alt="" class="img_lq2" />
+										<h2>{{ $products_random[$i]->sale_price }} VNĐ</h2>
+										<p>
+											{{ $products_random[$i]->name }}
+										</p>
+										<a href="#"
+											class="btn btn-default add-to-cart"><i
+												class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+									</div>
 
+								</div>
 							</div>
 						</div>
+					@endfor --}}
 					</div>
-				@endfor
-				</div>
-				<div class="item">
-					@for ($i = 3 ; $i < 6 ; $i++)
-					<div class="col-sm-4">
-						<div class="product-image-wrapper">
-							<div class="single-products">
-								<div class="productinfo text-center case2">
-									<img src="{{ $products_random[$i]->images[0]->image_url }}"
-										alt="" class="img_lq2"/>
-									<h2>{{ $products_random[$i]->sale_price }} VNĐ</h2>
-									<p>
-										{{ $products_random[$i]->name }}
-									</p>
-									<a href="#"
-										class="btn btn-default add-to-cart"><i
-											class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-								</div>
+					{{-- <div class="item">
+						@for ($i = 3 ; $i < 6 ; $i++)
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center case2">
+										<img src="{{ $products_random[$i]->images[0]->image_url }}"
+											alt="" class="img_lq2"/>
+										<h2>{{ $products_random[$i]->sale_price }} VNĐ</h2>
+										<p>
+											{{ $products_random[$i]->name }}
+										</p>
+										<a href="#"
+											class="btn btn-default add-to-cart"><i
+												class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+									</div>
 
+								</div>
 							</div>
 						</div>
-					</div>
-					@endfor
-					
-					
-					
-				</div>
+						@endfor
+						
+						
+						
+					</div> --}}
+				@endif
 			</div>
 			<a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
 				<i class="fa fa-angle-left"></i>

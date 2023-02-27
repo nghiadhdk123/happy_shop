@@ -15,10 +15,10 @@ class AddTableCatergories extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('user_id');
+            $table->string('name')->nullable();
+            $table->integer('user_id')->nullable();
             $table->integer('parent_id')->default(0);
-            $table->text('slug');
+            $table->text('slug')->nullable();
             $table->timestamps();
         });
     }

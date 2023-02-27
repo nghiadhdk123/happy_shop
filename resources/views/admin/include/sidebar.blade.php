@@ -50,7 +50,7 @@
 				</li>
 
 				<!-- Quản lí sản phẩm -->
-				@if(auth()->user()->hasAnyPermission(['create product','edit product','destroy product']))
+				@if(auth()->user()->hasAnyPermission(['add product','edit product','destroy product']))
 				<li class="nav-item has-treeview {{ Route::is('product.create') || Route::is('product.list') || Route::is('product.index') ? 'menu-open' : '' }}">
 					<a href="#" class="nav-link {{ Route::is('product.create') || Route::is('product.list') || Route::is('product.index') ? 'active' : '' }}">
 						<i class="nav-icon fas fa-shopping-basket"></i>
@@ -60,7 +60,7 @@
 						</p>
 					</a>
 					<ul class="nav nav-treeview">
-						@if(auth()->user()->hasAnyPermission(['create product']))
+						@if(auth()->user()->hasAnyPermission(['add product']))
 						<li class="nav-item">
 							<a href="{{ route('product.create') }}" class="nav-link {{ Route::is('product.create') ? 'active' : '' }}">
 								<i class="far fa-circle nav-icon"></i>
@@ -113,7 +113,7 @@
 				@endif
 
 				<!-- Quản lí danh mục sản phẩm -->
-				@if(auth()->user()->hasAnyPermission(['create category','edit category','destroy category']))
+				@if(auth()->user()->hasAnyPermission(['add category','edit category','destroy category']))
 				<li class="nav-item has-treeview {{ Route::is('category.create') || Route::is('category.index') ? 'menu-open' : '' }}">
 					<a href="#" class="nav-link {{ Route::is('category.create') || Route::is('category.index') ? 'active' : '' }}">
 						<i class="nav-icon fas fa-chart-pie"></i>
@@ -123,7 +123,7 @@
 						</p>
 					</a>
 					<ul class="nav nav-treeview">
-						@if(auth()->user()->hasAnyPermission(['create category']))
+						@if(auth()->user()->hasAnyPermission(['add category']))
 						<li class="nav-item">
 							<a href="{{ route('category.create') }}" class="nav-link {{ Route::is('category.create') ? 'active' : '' }}">
 								<i class="far fa-circle nav-icon"></i>
@@ -142,7 +142,7 @@
 				@endif
 
 				<!-- Quản lí người dùng -->
-				@if(auth()->user()->hasAnyPermission(['create user','edit user','destroy user']))
+				@if(auth()->user()->hasAnyPermission(['add user','edit user','destroy user']))
 				<li class="nav-item has-treeview {{ Route::is('user.create') || Route::is('user.index') || Route::is('user.list-delete') ? 'menu-open' : '' }}">
 					<a href="#" class="nav-link {{ Route::is('user.create') || Route::is('user.index') || Route::is('user.list-delete') ? 'active' : '' }}">
 						<i class="nav-icon fas fa-user"></i>
@@ -179,7 +179,7 @@
 				@endif
 
 				<!-- Quản lí bài viết và quản lí thẻ -->
-				@if(auth()->user()->hasAnyPermission(['create post','edit post','destroy post']))
+				@if(auth()->user()->hasAnyPermission(['add post','edit post','destroy post']))
 				<li class="nav-item has-treeview">
 					<a href="#" class="nav-link">
 						<i class="nav-icon fas fa-book"></i>

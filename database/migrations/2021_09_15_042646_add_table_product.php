@@ -15,17 +15,17 @@ class AddTableProduct extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->string('description')->nullable();
-            $table->integer('origin_price');
-            $table->integer('sale_price');
-            $table->integer('quantity');
-            $table->integer('sell_number')->comment('Số lượng bán')->default(0);
-            $table->integer('inventory')->comment('Tồn kho');
-            $table->integer('category_id');
-            $table->integer('user_id');
-            $table->integer('status')->default(1);
+            $table->integer('origin_price')->nullable();
+            $table->integer('sale_price')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('sell_number')->comment('Số lượng bán')->default(0)->nullable();
+            $table->integer('inventory')->comment('Tồn kho')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->integer('status')->default(1)->nullable();
             $table->string('content_more')->nullable();
             $table->timestamps();
             $table->softDeletes();

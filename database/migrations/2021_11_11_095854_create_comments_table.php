@@ -15,12 +15,12 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
+            $table->integer('product_id')->nullable();
             $table->text('content')->nullable();
-            $table->integer('parent_id')->default(0);
+            $table->integer('parent_id')->default(0)->nullable();
             $table->string('image')->nullable();
-            $table->integer('user_id');
-            $table->integer('status')->default(0);
+            $table->integer('user_id')->nullable();
+            $table->integer('status')->default(0)->nullable();
             $table->timestamps();
         });
     }
